@@ -16,6 +16,7 @@ def get_biggest_bar(data):
                 biggest_bar.update(bar)
         else:
             biggest_bar.update(bar)
+    print('Biggest bar is:\n{bar}\n'.format(bar=biggest_bar))
     return biggest_bar
 
 
@@ -28,6 +29,7 @@ def get_smallest_bar(data):
                 smallest_bar.update(bar)
         else:
             smallest_bar.update(bar)
+    print('Smallest bar is:\n{bar}\n'.format(bar=smallest_bar))
     return smallest_bar
 
 
@@ -44,10 +46,11 @@ def get_closest_bar(data, longitude, latitude):
                 closest_bar.update(bar)
         else:
             closest_bar.update(bar)
+    print('Closest bar to you is:\n%s' % closest_bar)
     return closest_bar
 
 if __name__ == '__main__':
     data = load_data('Bars.json')
-    print('Biggest bar is:\n' + str(get_biggest_bar(data)) + '\n')
-    print('Smallest bar is:\n' + str(get_smallest_bar(data)) + '\n')
-    print('Closest bar to you is:\n' + str(get_closest_bar(data, 37.74181286727435, 55.647832044034075)))
+    get_biggest_bar(data)
+    get_smallest_bar(data)
+    get_closest_bar(data, 37.74181286727435, 55.647832044034075)
