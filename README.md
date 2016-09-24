@@ -14,7 +14,6 @@ How to use:
 
 All functions take one argument (data) - a list of bars in JSON format and returns bar (name, address).
 
-get_biggest_bar(data) - bar with the biggest number of seats.
-get_smallest_bar(data) - bar with the smallest number of seats.
-get_closest_bar(data) -  bar which is closest to your location. Your location needs to be entered manually.
-
+- get_biggest_bar(data) - bar with the biggest number of seats.
+- get_smallest_bar(data) - bar with the smallest number of seats.
+- get_closest_bar(data) -  bar which is closest to your location. Your location needs to be entered manually.
