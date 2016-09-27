@@ -3,10 +3,10 @@ import operator
 
 
 def load_data(filepath):
-    with open(filepath, encoding='utf8') as file:
-        json_file = json.load(file)
-    return json_file
-        
+    with open(filepath, encoding='utf8') as json_file:
+        data = json.load(json_file)
+    return data
+
 
 def get_biggest_bar(data):
     bars_ids_and_seats = {bar['Id']: bar['Cells']['SeatsCount'] for bar in data}
@@ -54,10 +54,11 @@ def get_user_coordinates():
 
 
 def find_distance_between_points(point_1, point_2):
-    '''
-    point_1 & point_2 supposed to be tuples, that consists of two float numbers.
-    '''
-    return sum([abs(point_1[0] - point_2[0]), abs(point_1[1] - point_2[1])])
+    point_1_x = point_1[0]
+    point_1_y = point_1[1]
+    point_2_x = point_2[0]
+    point_2_y = point_2[1]
+    return sum([abs(point_1_x - point_2_x), abs(point_1_y - point_2_y)])
 
 
 def print_bar_info(bar, head=None):
