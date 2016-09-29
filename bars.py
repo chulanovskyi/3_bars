@@ -10,15 +10,15 @@ def load_data(filepath):
 
 def get_biggest_bar(data):
     bars_ids_and_seats = {bar['Id']: bar['Cells']['SeatsCount'] for bar in data}
-    bar_id_by_max_seats = max(bars_ids_and_seats.items(), key=operator.itemgetter(1))[0]
-    biggest_bar = next(bar for bar in data if bar['Id'] == bar_id_by_max_seats)
+    big_bar_id, big_bar_seats = max(bars_ids_and_seats.items(), key=operator.itemgetter(1))
+    biggest_bar = next(bar for bar in data if bar['Id'] == big_bar_id)
     return biggest_bar
 
 
 def get_smallest_bar(data):
     bars_ids_and_seats = {bar['Id']: bar['Cells']['SeatsCount'] for bar in data}
-    bar_id_by_min_seats = min(bars_ids_and_seats.items(), key=operator.itemgetter(1))[0]
-    smallest_bar = next(bar for bar in data if bar['Id'] == bar_id_by_min_seats)
+    small_bar_id, small_bar_seats = min(bars_ids_and_seats.items(), key=operator.itemgetter(1))
+    smallest_bar = next(bar for bar in data if bar['Id'] == small_bar_id)
     return smallest_bar
 
 
